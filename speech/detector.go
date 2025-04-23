@@ -238,9 +238,9 @@ func (sd *Detector) Detect(pcm []float32) ([]Segment, error) {
 			sd.triggered = false
 			slog.Debug("speech end", slog.Float64("endAt", speechEndAt))
 
-			if len(segments) < 1 {
-				return nil, fmt.Errorf("unexpected speech end")
-			}
+			// if len(segments) < 1 {
+			// 	return nil, fmt.Errorf("unexpected speech end")
+			// }
 
 			segments[len(segments)-1].SpeechEndAt = speechEndAt
 		}
